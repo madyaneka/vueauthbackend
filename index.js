@@ -59,3 +59,13 @@ app.get('/api/logout', function(req, res) {
 
   return res.send()
 })
+
+app.get('/api/user', authMiddleware, (req, res) => {
+  const user = users.find(user => {
+    return user.id === req.session.passport.user
+  })
+
+  console.log([user, req.session])
+
+  res.send({ user: user })
+})
