@@ -102,3 +102,11 @@ passport.use(
 passport.serializeUser((user, done) => {
   done(null, user.id)
 })
+
+passport.deserializeUser((id, done) => {
+  let user = users.find((user) => {
+    return user.id === id
+  })
+
+  done(null, user)
+})
