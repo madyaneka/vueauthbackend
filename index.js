@@ -20,3 +20,18 @@ app.use(cookieSession({
 app.use(passport.initialize())
 
 app.use(passport.session())
+
+const users = [
+  {
+    id: 1,
+    name: 'Jude',
+    email: 'user@email.com',
+    password: 'password'
+  },
+  {
+    id: 2,
+    name: 'Emma',
+    email: 'emma@email.com',
+    password: 'password2'
+  }
+]
