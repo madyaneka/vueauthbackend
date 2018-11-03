@@ -51,3 +51,11 @@ app.post('/api/login', (req, res, next) => {
     });
   })(req, res, next)
 })
+
+app.get('/api/logout', function(req, res) {
+  req.logout()
+
+  console.log('logged out')
+
+  return res.send()
+})
