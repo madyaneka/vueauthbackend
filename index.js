@@ -9,6 +9,9 @@ const passport = require('passport')
 // getting the local authentication type
 const LocalStrategy = require('passport-local').Strategy
 
+const publicRoot = '/home/madyan/Development/vue-app/vueauthclient/dist'
+app.use(express.static(publicRoot))
+
 app.use(bodyParser.json())
 
 app.use(cookieSession({
@@ -35,6 +38,10 @@ const users = [
     password: 'password2'
   }
 ]
+
+app.get('/', (req, res, next) => {
+  res.sendFile('index.html', { root: publicRoot })
+})
 
 app.post('/api/login', (req, res, next) => {
   passport.authenticate('local', (err, user, info) => {
