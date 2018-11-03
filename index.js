@@ -110,3 +110,7 @@ passport.deserializeUser((id, done) => {
 
   done(null, user)
 })
+
+app.listen(3000, () => {
+  console.log('Example app listening on port 3000')
+})
