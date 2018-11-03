@@ -7,7 +7,7 @@ const bodyParser = require('body-parser')
 const passport = require('passport')
 
 // getting the local authentication type
-const localStrategy = require('passport-local').Strategy
+const LocalStrategy = require('passport-local').Strategy
 
 app.use(bodyParser.json())
 
